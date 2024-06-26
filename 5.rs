@@ -1,6 +1,8 @@
-const INPUT: &str = include_str!("input/5");
+const INPUT: &str = include_str!("5.txt");
 
-pub fn one() {
+fn main() { one(); two(); }
+
+fn one() {
     let result = INPUT
         .lines()
         .filter(|line| {
@@ -39,7 +41,7 @@ fn has_forbidden_sequences(line: &str) -> bool {
     false
 }
 
-pub fn two() {
+fn two() {
     let result = INPUT
         .lines()
         .filter(|line| {
