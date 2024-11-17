@@ -25,8 +25,30 @@ fn one() {
     }
 
     let result = lights.iter().filter(|b| **b).count();
+    print!("6.1: {result}\t\t");
+}
 
-    println!("{result}");
+fn two() {
+    let mut lights = [0; 1_000_000];
+
+    for line in INPUT.lines() {
+        let (light_level, from, to) = parse_line_two(line);
+
+        for line in from.line..=to.line {
+            for col in get_col_iter(from.col, to.col).iter() {
+                // Applies the actual work (turn on, turn off, toggle) to the light
+                // line * 1_000 + col converts coordinates to linear index
+                let i = line * 1_000 + col;
+                lights[i] += light_level;
+                
+                // The lights can't have negative light levels
+                if lights[i] < 0 { lights[i] = 0; }
+            }
+        }
+    }
+
+    let result: i32 = lights.iter().sum();
+    println!("6.2: {result}");
 }
 
 // Takes a line and returns the type of action as Command (turn on, turn off, toggle)
@@ -68,30 +90,6 @@ fn get_line_without_command(line: &str) -> &str {
 fn get_col_iter(a: usize, b: usize) -> Vec<usize> {
     if b < a { return (b..=a).rev().collect(); }
     (a..=b).collect()
-}
-
-fn two() {
-    let mut lights = [0; 1_000_000];
-
-    for line in INPUT.lines() {
-        let (light_level, from, to) = parse_line_two(line);
-
-        for line in from.line..=to.line {
-            for col in get_col_iter(from.col, to.col).iter() {
-                // Applies the actual work (turn on, turn off, toggle) to the light
-                // line * 1_000 + col converts coordinates to linear index
-                let i = line * 1_000 + col;
-                lights[i] += light_level;
-                
-                // The lights can't have negative light levels
-                if lights[i] < 0 { lights[i] = 0; }
-            }
-        }
-    }
-
-    let result: i32 = lights.iter().sum();
-
-    println!("{result}");
 }
 
 // Takes a line and returns the light level to increase/decrease by and the both

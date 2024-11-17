@@ -9,7 +9,7 @@ fn one() {
 
     let result = houses.len();
 
-    println!("{result}");
+    print!("3.1: {result}\t\t");
 }
 
 fn two() {
@@ -22,7 +22,7 @@ fn two() {
 
     let result = all_houses.len();
 
-    println!("{result}");
+    println!("3.2: {result}");
 }
 
 // Takes an iterator of indices and returns a vector of coordinates after the respective

@@ -11,8 +11,7 @@ fn one() {
             && has_three_vowels(line)
         })
         .count();
-
-    println!("{result}");
+    print!("5.1: {result}\t\t");
 }
 
 fn two() {
@@ -23,8 +22,7 @@ fn two() {
             && has_repeating_letter(line)
         })
         .count();
-
-    println!("{result}");
+    println!("5.2: {result}");
 }
 
 fn has_three_vowels(line: &str) -> bool {

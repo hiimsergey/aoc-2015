@@ -21,7 +21,7 @@ fn main() {
         result = transform(result);
     }
 
-    println!("{result}");
+    println!("25: {result}");
 }
 
 // Counts the number of coordinates between (1, 1) and (row, col)

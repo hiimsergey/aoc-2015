@@ -5,12 +5,12 @@ fn main() { one(); two(); }
 
 fn one() {
     let result: i32 = INPUT.chars().map(|c| if c == '(' { 1 } else { -1 }).sum();
-    println!("{result}");
+    print!("1.1: {result}\t\t\t");
 }
 
 fn two() {
     let result = count_stories(0, 0);
-    println!("{result}");
+    println!("1.2: {result}");
 }
 
 fn count_stories(index: usize, counter: i32) -> usize {

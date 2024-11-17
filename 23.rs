@@ -4,7 +4,12 @@ fn main() { one(); two(); }
 
 fn one() {
     let result = read(0, 0, 0);
-    println!("{result}");
+    print!("23.1: {result}\t\t");
+}
+
+fn two() {
+    let result = read(0, 1, 0);
+    println!("23.2: {result}");
 }
 
 // Reads the index-th line of the instructions and alters registers (a and b)
@@ -47,9 +52,4 @@ fn read(index: isize, a: isize, b: isize) -> isize {
         },
         None => b
     }
-}
-
-fn two() {
-    let result = read(0, 1, 0);
-    println!("{result}");
 }

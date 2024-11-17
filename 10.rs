@@ -8,7 +8,15 @@ fn one() {
     for _ in 0..40 { input_vec = look_and_say(&input_vec); }
 
     let result = input_vec.len();
-    println!("{result}");
+    print!("10.1: {result}\t\t");
+}
+
+fn two() {
+    let mut input: Vec<u8> = INPUT.chars().map(|s| s.to_digit(10).unwrap() as u8).collect();
+    for _ in 0..50 { input = look_and_say(&input); }
+
+    let result = input.len();
+    println!("10.2: {result}");
 }
 
 fn look_and_say(input: &Vec<u8>) -> Vec<u8> {
@@ -30,12 +38,4 @@ fn look_and_say(input: &Vec<u8>) -> Vec<u8> {
     result.push(occurences);
     result.push(current);
     result
-}
-
-fn two() {
-    let mut input: Vec<u8> = INPUT.chars().map(|s| s.to_digit(10).unwrap() as u8).collect();
-    for _ in 0..50 { input = look_and_say(&input); }
-
-    let result = input.len();
-    println!("{result}");
 }

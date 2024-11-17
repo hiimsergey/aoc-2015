@@ -9,8 +9,7 @@ fn one() {
 
         2 * lw + 2 * wh + 2 * hl + lw.min(wh).min(hl)
     }).sum();
-
-    println!("{result}");
+    print!("2.1: {result}\t\t");
 }
 
 fn two() {
@@ -20,6 +19,5 @@ fn two() {
 
         2 * lwh[0] + 2 * lwh[1] + lwh.iter().product::<u32>()
     }).sum();
-
-    println!("{result}");
+    println!("2.2: {result}");
 }

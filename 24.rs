@@ -17,9 +17,13 @@ fn one() {
 
         position += 1;
     }
+
+    let result = 5;
+    print!("24.1: {result}\t\t");
 }
 
 fn two() {
     todo!()
+    println!("24.2: {result}")
 }
 // TODO

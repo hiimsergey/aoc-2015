@@ -4,9 +4,11 @@ fn main() { one(); two(); }
 
 fn one() {
     todo!()
+    let result = 0;
+    print!("13.1: {result}\t\t");
 }
 
 fn two() {
-    todo!()
+    println!("13.2: {result}");
 }
 // TODO

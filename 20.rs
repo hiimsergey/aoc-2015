@@ -18,7 +18,7 @@ fn one() {
         >= target
     }).unwrap();
 
-    println!("{result}");
+    print!("20.1: {result}\t\t");
 }
 
 fn two() {
@@ -40,5 +40,5 @@ fn two() {
         >= target
     }).unwrap();
 
-    println!("{result}");
+    println!("20.2: {result}");
 }

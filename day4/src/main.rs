@@ -24,7 +24,7 @@ fn one() {
         result += 1;
     }
 
-    println!("{result}");
+    print!("4.1: {result}\t\t");
 }
 
 fn two() {
@@ -39,5 +39,5 @@ fn two() {
         result += 1;
     }
 
-    println!("{result}");
+    println!("4.2: {result}");
 }
